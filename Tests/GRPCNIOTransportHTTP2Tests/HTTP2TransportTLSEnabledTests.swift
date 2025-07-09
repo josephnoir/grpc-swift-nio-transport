@@ -69,7 +69,8 @@ struct HTTP2TransportTLSEnabledTests {
     func intercept<Input, Output>(
       request: GRPCCore.StreamingServerRequest<Input>,
       context: GRPCCore.ServerContext,
-      next: @Sendable (GRPCCore.StreamingServerRequest<Input>, GRPCCore.ServerContext) async throws
+      next:
+        @Sendable (GRPCCore.StreamingServerRequest<Input>, GRPCCore.ServerContext) async throws
         -> GRPCCore.StreamingServerResponse<Output>
     ) async throws -> GRPCCore.StreamingServerResponse<Output>
     where Input: Sendable, Output: Sendable {
